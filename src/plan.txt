@@ -1,0 +1,24 @@
+Interface
+
+Nav
+    Home
+    Shop
+
+--------------------------------------
+
+Home
+
+--------------------------------------
+
+Shop
+    *State
+        -Current order
+
+    *Interface
+        -Sticky bar - current number of items (updated with state) + button to checkout
+        Display grid
+        -Display individual cards of each item
+            Img
+            Title
+            Add to cart
+            Should have an input field for quantity + button to increment or decrement

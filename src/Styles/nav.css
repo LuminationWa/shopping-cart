@@ -1,4 +1,22 @@
+@import "./constants.css";
+
 .nav {
     display: flex;
+    height: 10vh;
+    width: 100%;
     gap: 30px;
+    background-color: var(--secondary-color);
+    align-items: center;
+    justify-content: center;
+    gap: 25%;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav .link {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--tertiary-color);
 }

@@ -1,0 +1,6 @@
+@import "./constants.css";
+
+.home {
+    background-color: var(--primary-color);
+    height: 90vh;
+}

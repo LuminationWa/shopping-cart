@@ -1,0 +1,48 @@
+@import "./constants.css";
+
+.shop {
+  background-color: var(--primary-color);
+  height: 90vh;
+  padding: 50px;
+}
+
+.sticky-bar {
+  display: flex;
+  width: 100%;
+  gap: 5%;
+  background-color: aliceblue;
+}
+
+.items-display {
+    box-sizing: content-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 20px;
+    grid-template-rows: repeat(auto-fill, 250px);
+    justify-content: center;
+}
+
+.item-card {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.item-card .qty-bar {
+    display: flex;
+    gap: 20px;
+}
+
+.item-card .qty-bar input {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.item-card .qty-bar button {
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.3);
+}

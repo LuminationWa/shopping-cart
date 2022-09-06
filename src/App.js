@@ -3,6 +3,7 @@ import Nav from "./Components/Nav";
 import Home from "./Components/Home";
 import Shop from "./Components/Shop";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./Styles/general.css";
 
 function App() {
   return (
@@ -10,14 +11,8 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
-          <Route
-            path="/shop"
-            element={<Shop />}
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
         </Routes>
       </BrowserRouter>
     </div>
