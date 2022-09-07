@@ -6,6 +6,14 @@
   padding: 50px;
 }
 
+.shop button {
+    cursor: pointer;
+}
+
+.shop input { 
+    text-align: center; 
+}
+
 .sticky-bar {
   display: flex;
   width: 100%;
@@ -28,6 +36,10 @@
     justify-content: center;
     text-align: center;
     padding: 10px;
+}
+
+.item-card img {
+    justify-self: center;
 }
 
 .item-card .qty-bar {

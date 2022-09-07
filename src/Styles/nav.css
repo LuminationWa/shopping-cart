@@ -7,8 +7,20 @@
     gap: 30px;
     background-color: var(--secondary-color);
     align-items: center;
+    justify-content: space-between;
+    padding: 0px 5%;
+}
+
+.logo-img {
+    height: auto;
+    width: 20%;
+}
+
+.nav-buttons {
+    display: flex;
     justify-content: center;
-    gap: 25%;
+    gap: 10%;
+    width: 80%;
 }
 
 .nav a {

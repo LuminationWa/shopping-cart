@@ -1,7 +1,9 @@
+import "../../Styles/stickybar.css";
+
 const StickyBar = (props) => {
   return (
     <div class="sticky-bar">
-      <p>{props.itemQty}</p>
+      <div id="shopping-cart">{props.itemQty}</div>
       <button>Checkout</button>
     </div>
   );

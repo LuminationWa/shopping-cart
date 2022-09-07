@@ -1,0 +1,15 @@
+#shopping-cart {
+    background-image: url("../Components/ShopComponents/images/shopping-cart-empty-side-view.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    text-align: center;
+    width: 50px;
+    font-size: 3rem;
+    background-size: 50px 50px;
+}
+
+.sticky-bar {
+    height: 50px;
+}
