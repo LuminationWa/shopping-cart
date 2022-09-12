@@ -11,7 +11,9 @@ const Shop = () => {
 
   useEffect(() => {
     // Triggered after updateQty() -> Sums all the quantities -> setItemQty() -> StickyBar updates
-    let totalItems = products.reduce(function (acc, obj) { return acc + obj.qty; }, 0);
+    let totalItems = products.reduce(function (acc, obj) {
+      return acc + obj.qty;
+    }, 0);
     setItemQty(totalItems);
   }, [products]);
 
@@ -20,6 +22,14 @@ const Shop = () => {
     newArray[index].qty = products[index].qty + qty;
     setProducts(newArray);
     // products[index].qty = products[index].qty + qty;
+  };
+
+  const checkout = () => {
+    let productQty = [];
+    products.forEach(product => {
+      productQty.push({[product.name]: product.qty});      
+    });
+    console.log(productQty);
   };
 
   products.forEach((product, index) => {
@@ -35,7 +45,7 @@ const Shop = () => {
 
   return (
     <div class="shop">
-      <StickyBar itemQty={itemQty} />
+      <StickyBar itemQty={itemQty} checkout={checkout} />
       <div class="items-display">{cardsArray}</div>
     </div>
   );

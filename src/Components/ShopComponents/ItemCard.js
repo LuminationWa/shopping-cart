@@ -4,7 +4,7 @@ const ItemCard = (props) => {
   const [currentQty, setCurrentQty] = useState(0);
   return (
     <div className="item-card" id={props.name}>
-      <img src={props.image}></img>
+      <img src={props.image} alt="product"></img>
       <p>{props.name}</p>
       <div class="qty-bar">
         <button

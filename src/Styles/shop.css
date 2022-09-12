@@ -7,11 +7,11 @@
 }
 
 .shop button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.shop input { 
-    text-align: center; 
+.shop input {
+  text-align: center;
 }
 
 .sticky-bar {
@@ -22,39 +22,40 @@
 }
 
 .items-display {
-    box-sizing: content-box;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    row-gap: 20px;
-    grid-template-rows: repeat(auto-fill, 250px);
-    justify-content: center;
+  box-sizing: content-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 20px;
+  grid-template-rows: repeat(auto-fill, 250px);
+  justify-content: center;
 }
 
 .item-card {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
 }
 
 .item-card img {
-    justify-self: center;
+  width: 200px;
+  justify-self: center;
 }
 
 .item-card .qty-bar {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .item-card .qty-bar input {
-    border-radius: 10px;
-    border: none;
-    background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.3);
 }
 
 .item-card .qty-bar button {
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.3);
 }
