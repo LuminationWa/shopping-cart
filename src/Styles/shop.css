@@ -21,6 +21,26 @@
   background-color: aliceblue;
 }
 
+.hidden-checkout {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  border: 1px solid red;
+  top: -300px;
+  left: 50%;
+  margin-left: -150px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.visible-checkout {
+  opacity: 1;
+  left: 50%;
+  top: 50%; 
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
 .items-display {
   box-sizing: content-box;
   display: grid;

@@ -8,6 +8,7 @@ const Shop = () => {
   const [itemQty, setItemQty] = useState(0);
   const [products, setProducts] = useState(Products()); //Used to store product qty
   const cardsArray = []; //Used for display
+  let modal = document.querySelector(".hidden-checkout");
 
   useEffect(() => {
     // Triggered after updateQty() -> Sums all the quantities -> setItemQty() -> StickyBar updates
@@ -29,6 +30,7 @@ const Shop = () => {
     products.forEach(product => {
       productQty.push({[product.name]: product.qty});      
     });
+    modal.classList.add("visible-checkout");
     console.log(productQty);
   };
 
@@ -45,6 +47,12 @@ const Shop = () => {
 
   return (
     <div class="shop">
+      <div className="hidden-checkout">
+        <button
+        onClick={() => {
+          modal.classList.toggle("visible-checkout");
+        }}>Test</button>
+      </div>
       <StickyBar itemQty={itemQty} checkout={checkout} />
       <div class="items-display">{cardsArray}</div>
     </div>
