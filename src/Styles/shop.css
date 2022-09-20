@@ -24,7 +24,8 @@
 .items-display {
   box-sizing: content-box;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, 250px);
+  column-gap: 20px;
   row-gap: 20px;
   grid-template-rows: repeat(auto-fill, 250px);
   justify-content: center;
@@ -36,22 +37,33 @@
   justify-content: center;
   text-align: center;
   padding: 10px;
+  gap: 10px;
+}
+
+.item-card button {
+  cursor: pointer;
+  z-index: 1;
+  max-width: 50%;
+  justify-self: center;
 }
 
 .item-card img {
-  width: 200px;
+  max-width: 200px;
   justify-self: center;
 }
 
 .item-card .qty-bar {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 
 .item-card .qty-bar input {
+  position: absolute;
   border-radius: 10px;
   border: none;
   background-color: rgba(128, 128, 128, 0.3);
+  min-width: 200px;
 }
 
 .item-card .qty-bar button {
