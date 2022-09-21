@@ -3,10 +3,12 @@ import "../Styles/shop.css";
 import StickyBar from "./ShopComponents/StickyBar";
 import Products from "./ShopComponents/Products";
 import ItemCard from "./ShopComponents/ItemCard";
+import Modal from "./ShopComponents/Modal";
 
 const Shop = () => {
   const [itemQty, setItemQty] = useState(0);
   const [products, setProducts] = useState(Products()); //Used to store product qty
+  const [productQty, setProductQty] = useState([]);
   const cardsArray = []; //Used for display
   let modal = document.querySelector(".hidden-checkout");
 
@@ -22,16 +24,17 @@ const Shop = () => {
     let newArray = [...products];
     newArray[index].qty = products[index].qty + qty;
     setProducts(newArray);
-    // products[index].qty = products[index].qty + qty;
   };
 
   const checkout = () => {
-    let productQty = [];
-    products.forEach(product => {
-      productQty.push({[product.name]: product.qty});      
+    // Filters products wity qty < 1
+    let tempQty = [];
+    products.forEach((product) => {
+      if (product.qty > 0) tempQty.push({ [product.name]: product.qty });
     });
-    modal.classList.add("visible-checkout");
-    console.log(productQty);
+    // Element is getting rerendered with parent and class gets deleted
+    setProductQty(tempQty);
+    if (productQty.length > 0) modal.classList.add("visible-checkout");
   };
 
   products.forEach((product, index) => {
@@ -47,12 +50,7 @@ const Shop = () => {
 
   return (
     <div class="shop">
-      <div className="hidden-checkout">
-        <button
-        onClick={() => {
-          modal.classList.toggle("visible-checkout");
-        }}>Test</button>
-      </div>
+      <Modal productQty={productQty} />
       <StickyBar itemQty={itemQty} checkout={checkout} />
       <div class="items-display">{cardsArray}</div>
     </div>
