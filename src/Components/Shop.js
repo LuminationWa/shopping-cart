@@ -6,35 +6,23 @@ import ItemCard from "./ShopComponents/ItemCard";
 import Modal from "./ShopComponents/Modal";
 
 const Shop = () => {
-  const [itemQty, setItemQty] = useState(0);
-  const [products, setProducts] = useState(Products()); //Used to store product qty
-  const [productQty, setProductQty] = useState([]);
-  const cardsArray = []; //Used for display
-  let modal = document.querySelector(".hidden-checkout");
+  const [totalQty, setTotalQty] = useState(0); //Stores total qty
+  const [products, setProducts] = useState(Products()); //Stores all product data
+  const cardsArray = []; //Used to store item cards for display
 
   useEffect(() => {
     // Triggered after updateQty() -> Sums all the quantities -> setItemQty() -> StickyBar updates
     let totalItems = products.reduce(function (acc, obj) {
       return acc + obj.qty;
     }, 0);
-    setItemQty(totalItems);
+    setTotalQty(totalItems);
   }, [products]);
 
   const updateQty = (index, qty) => {
+    // Triggered when add to cart btn is clicked, updates the quantities of the products array -> UseEffect
     let newArray = [...products];
     newArray[index].qty = products[index].qty + qty;
     setProducts(newArray);
-  };
-
-  const checkout = () => {
-    // Filters products wity qty < 1
-    let tempQty = [];
-    products.forEach((product) => {
-      if (product.qty > 0) tempQty.push({ [product.name]: product.qty });
-    });
-    // Element is getting rerendered with parent and class gets deleted
-    setProductQty(tempQty);
-    if (productQty.length > 0) modal.classList.add("visible-checkout");
   };
 
   products.forEach((product, index) => {
@@ -50,8 +38,8 @@ const Shop = () => {
 
   return (
     <div class="shop">
-      <Modal productQty={productQty} />
-      <StickyBar itemQty={itemQty} checkout={checkout} />
+      <Modal products={products} />
+      <StickyBar totalQty={totalQty} />
       <div class="items-display">{cardsArray}</div>
     </div>
   );

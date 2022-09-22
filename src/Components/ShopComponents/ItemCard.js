@@ -9,7 +9,7 @@ const ItemCard = (props) => {
       <div class="qty-bar">
         <button
           onClick={() => {
-            if (currentQty != 0) setCurrentQty(currentQty - 1);
+            if (currentQty !== 0) setCurrentQty(currentQty - 1);
           }}
         >
           -

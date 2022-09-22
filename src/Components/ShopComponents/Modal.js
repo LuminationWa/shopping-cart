@@ -2,22 +2,38 @@ import "../../Styles/modal.css";
 import React, { useState, useEffect } from "react";
 
 const Modal = (props) => {
+  const [productQty, setProductQty] = useState([]); //Elements to be displayed
   const [productList, setProductList] = useState([]);
 
-  // This will launch only if propName value has chaged.
+  useEffect(() => {
+    makeList(props.products);
+  }, [props.products]);
+
+  const makeList = (products) => {
+    // Gets triggered by useEffect when there's a change in product quantities. Filters the array and populates productQty with products added to cart
+    let tempQty = [];
+    products.forEach((product) => {
+      if (product.qty > 0) tempQty.push({
+         name : product.name,
+         qty : product.qty
+       });
+    });
+    setProductQty(tempQty);
+  };
 
   useEffect(() => {
-    console.log("products", props.productQty);
+    // Triggered after productQty gets updated. Creates a Li for each element and pushes it to productList
     let tempList = [];
-    props.productQty.forEach((product) => {
+    productQty.forEach((product) => {
       tempList.push(
         <li key={product.name + "a"}>
-          {product.name}
+          {product.name} - {product.qty}x
         </li>
       );
     });
     setProductList(tempList);
-  }, [props.productQty]);
+  }, [productQty]);
+
 
   return (
     <div className="hidden-checkout" key={props.productQty}>
@@ -28,7 +44,7 @@ const Modal = (props) => {
           modal.classList.toggle("visible-checkout");
         }}
       >
-        Test
+        Close
       </button>
     </div>
   );
