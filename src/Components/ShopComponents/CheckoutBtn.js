@@ -1,6 +1,6 @@
-import "../../Styles/stickybar.css";
+import "../../Styles/checkout-btn.css";
 
-const StickyBar = (props) => {
+const CheckoutBtn = (props) => {
   let modal = document.querySelector(".hidden-checkout");
   return (
     <button
@@ -14,4 +14,4 @@ const StickyBar = (props) => {
   );
 };
 
-export default StickyBar;
+export default CheckoutBtn;

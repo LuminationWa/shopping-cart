@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Styles/shop.css";
-import StickyBar from "./ShopComponents/StickyBar";
+import CheckoutBtn from "./ShopComponents/CheckoutBtn";
 import Products from "./ShopComponents/Products";
 import ItemCard from "./ShopComponents/ItemCard";
 import Modal from "./ShopComponents/Modal";
@@ -39,7 +39,7 @@ const Shop = () => {
   return (
     <div class="shop">
       <Modal products={products} />
-      <StickyBar totalQty={totalQty} />
+      <CheckoutBtn totalQty={totalQty} />
       <div class="items-display">{cardsArray}</div>
     </div>
   );
